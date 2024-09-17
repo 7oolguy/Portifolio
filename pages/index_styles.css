@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Caveat';
+    src: url('fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: #0e0e0e;       /* Cor principal, geralmente usada para fundos ou textos principais */
+    --secondary-color: #cf3030;     /* Cor secundária, usada para elementos de destaque */
+    --accent-color: #e88a1a;        /* Cor de destaque, usada para chamar a atenção em elementos específicos */
+    --neutral-color: #d9d9d9; /* Cor neutra, ideal para fundos, bordas ou textos */
+    --font-color: #ffffff; 
+    --division-light: #a7a7a7;     
+}
+
+::selection {
+    background-color: var(--secondary-color); /* Background color of the selection */
+    color: var(--neutral-color);              /* Text color within the selection */
+}
+
+*{
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: auto;
+    overflow-x: hidden;
+    max-width: 100vw;
+    background-color: #000;
+}
+
+#intro_body {
+    display: block;
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(rgb(22, 22, 22), #000);
+    background-color: var(--primary-color);
+}
+
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#logo{
+    font-size: 30px;
+    color: var(--font-color);
+    position: absolute;
+    top: 1.5vh;
+    left: 1.5vw;
+    user-select: none;
+}
+
+#header_grid{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: none;
+}
+
+#nav_grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.grid_list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Define colunas flexíveis */
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grid_list li {
+    text-align: center;
+}
+
+.grid_list li a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 5px;
+    color: var(--font-color);
+    transition: background-color .2s ease-in-out;
+}
+
+.grid_list li a:hover{
+    padding: 0 5px;
+    text-decoration: underline;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+}
+
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#intro > h1{
+    color: var(--font-color);
+    font-size: 15vh;
+    position: relative;
+}
+
+/*Setup the blinking sidebar*/
+
+#intro > #text:after{
+    content: "";
+    width: .5vw;
+    height: 20vh;
+    background-color: var(--font-color);
+    position:absolute;
+    right: 0;
+    top: 0;
+    animation: blink 1s infinite steps(2, start);
+}
+
+@keyframes blink {
+    to{
+        visibility: hidden;
+    }
+}
+
+#about_me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--neutral-color);
+    top: 100vh;
+    left: 0;
+    height: 80vh;
+    width: 100vw;
+    padding: 10vh 0;
+}
+
+#about_me_card{
+    height: auto;
+    padding: 10vh;
+    width: 45vw;
+    border-top: solid 1px var(--division-light);
+    border-bottom: solid 1px var(--division-light);
+}
+
+.highlight_red{
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    padding: 0 .5vw;
+}
+
+.who{
+    font-size: 5vh;
+}
+
+.about_me_info{
+    padding: 1vh 2vw;
+    font-size: 2.5vh;
+}
+
+.about_me_info::after{
+    content: "";
+    width: .5vw;
+    background-color: var(--secondary-color);
+    height: 20vh;
+    position: absolute;
+    top: 45vh;
+    left: 28vw;
+}
+
+#projects{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 200vh;
+    left: 0;
+    height: 80vh;
+    width: 100vw;
+    padding: 10vh 0;
+}
+
+.work{
+    text-align: center;
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    background-color: aqua;
+    color: black;
+}
+
+.projects_title{
+    color: var(--primary-color);
+    padding: 0 .5vw;
+    background-color: var(--accent-color);
+}
